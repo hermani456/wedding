@@ -1,7 +1,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import { Playfair_Display } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+// Playfair Display
+const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +14,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="es">
+      <body className={playfairDisplay.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
