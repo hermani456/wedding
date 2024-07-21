@@ -4,7 +4,8 @@ import { FileforgeClient } from "@fileforge/client";
 import { compile } from "@fileforge/react-print";
 import Template from "../../components/Template";
 import fs from "fs";
-const path = require("path");
+import { promises as fss } from 'fs';
+// const path = require("path");
 
 const ff = new FileforgeClient({
   apiKey: process.env.ONEDOC_API_KEY,
@@ -12,20 +13,21 @@ const ff = new FileforgeClient({
 
 export const GET = async () => {
   const HTML = await compile(Template());
-  const imagePath = path.join(__dirname, 'Picture1.png');
-  const imageBuffer = fs.readFileSync(imagePath);
-  const imagePath2 = path.join(__dirname, 'Picture2.png');
-  const imageBuffer2 = fs.readFileSync(imagePath2);
+  // const file = await fss.readFile(process.cwd() + '/public/sakura.png');
+  const imagePath = await fss.readFile(process.cwd() + '/public/Picture1.png');
+  // const imageBuffer = fs.readFileSync(imagePath);
+  const imagePath2 = await fss.readFile(process.cwd() + '/public/Picture2.png');
+  // const imageBuffer2 = fs.readFileSync(imagePath2);
 
   const pdfStream = await ff.pdf.generate(
     [
       new File([HTML], "index.html", {
         type: "text/html",
       }),
-      new File([imageBuffer], "Picture1.png", {
+      new File([imagePath], "Picture1.png", {
         type: "image/png",  
       }),
-      new File([imageBuffer2], "Picture2.png", {
+      new File([imagePath2], "Picture2.png", {
         type: "image/png",
       }),
     ],

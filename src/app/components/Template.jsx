@@ -1,13 +1,23 @@
-import { Footnote, PageBottom, Tailwind, CSS } from "@fileforge/react-print";
+import { Footnote, Tailwind, CSS } from "@fileforge/react-print";
 
 const Template = () => {
   return (
     <>
-      <CSS>{`@page {size: A4;margin-top:0cm;margin-left:0cm;margin-right:0`}</CSS>
+      <CSS>{`@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");@page {size: A4;margin-top:0cm;margin-left:0cm;margin-right:0;}`}</CSS>
+      {/* <Font url="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" /> */}
+      {/* <Font url="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"></Font> */}
       <Tailwind className="relative">
         <div className="ml-[2cm] mr-[2cm]">
-          <img src="Picture1.png" alt="sakura" className="absolute w-52 -left-20 -top-10"/>
-          <img src="Picture2.png" alt="sakura" className="absolute w-52 -right-10 -top-14"/>
+          <img
+            src="Picture1.png"
+            alt="sakura"
+            className="absolute w-52 -left-20 -top-10"
+          />
+          <img
+            src="Picture2.png"
+            alt="sakura"
+            className="absolute w-52 -right-10 -top-14"
+          />
           {/* <div className="bg-gradient-to-r from-blue-600 to-blue-400 -z-10 absolute -left-[2cm] right-[25vw] -skew-y-12 h-[100vh] bottom-[95vh]" />
 
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 -z-20 absolute left-[75vw] -right-[2cm] -skew-y-12 h-[100vh] bottom-[90vh]" />
@@ -36,20 +46,19 @@ const Template = () => {
                 <path d="M4.91,19.78c1.4,1.26,3.03,2.12,4.9,2.48v-6.32L4.91,19.78z" />
               </g>
             </svg> */}
-
-            <h1 className="text-center text-2xl text-slate-800 great-vibes">
+            <h1
+              className="text-center text-2xl text-slate-800"
+              style={{ fontFamily: "Great Vibes" }}
+            >
               Receipt from Acme Inc.
             </h1>
-
             <p className="pt-2 text-slate-400 text-center">Receipt #10192</p>
-
             <div className="p-12 flex-grow bg-white rounded-2xl rounded-t-none shadow-xl shadow-black/10">
               <div className="flex justify-between gap-4">
                 <div>
                   <div className="text-sm text-gray-400 font-bold uppercase pb-1">
                     Amount paid
                   </div>
-
                   <div className="flex gap-4 items-center">$12.99</div>
                 </div>
 
@@ -131,7 +140,7 @@ const Template = () => {
         </div>
       </Tailwind>
     </>
-  )
-}
+  );
+};
 
-export default Template
+export default Template;
