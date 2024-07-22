@@ -8,6 +8,12 @@
   font-family: "Great Vibes", cursive;
 } */
 
+/* @page{
+  size: A4;
+} */
+
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
