@@ -4,9 +4,10 @@ import { FileforgeClient } from "@fileforge/client";
 import { compile } from "@fileforge/react-print";
 import Template from "../../components/Template";
 import fs from "fs";
-import { promises as fss } from 'fs';
+import { promises as fss } from "fs";
 import { Resend } from "resend";
-// const path = require("path");
+import { StackOverflowTipsEmail } from "../../../../emails/Template";
+import pool from "../../../utils/db";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -16,38 +17,33 @@ const ff = new FileforgeClient({
 
 export const POST = async (req) => {
   const body = await req.json();
-  const { name, guest, email } = body;
-  console.log(body);
-  const HTML = await compile(<Template name={name} guest={guest} email={email}/>);
-  const imagePath = await fss.readFile(process.cwd() + '/public/Picture1.png');
-  const imagePath2 = await fss.readFile(process.cwd() + '/public/Picture2.png');
-  const imagePath3 = await fss.readFile(process.cwd() + '/public/border1.png');
-  const imagePath4 = await fss.readFile(process.cwd() + '/public/border.png');
-  const imagePath5 = await fss.readFile(process.cwd() + '/public/2.png');
+  const { name, guest, email, invitationcode } = body;
+
+  const code = await pool.query(
+    "SELECT * FROM invitationCodes WHERE code = $1",
+    [invitationcode]
+  );
+
+  if (code.rows.length === 0 || code.rows[0].used) {
+    return NextResponse.json(
+      { error: "Invalid invitation code" },
+      { status: 400 }
+    );
+  }
+
+  // await pool.query("UPDATE invitationCodes SET used = true WHERE code = $1", [invitationcode]);
+
+  const HTML = await compile(<Template name={name} guest={guest} />);
+  const imagePath4 = await fss.readFile(process.cwd() + "/public/border2.png");
 
   const pdfStream = await ff.pdf.generate(
     [
       new File([HTML], "index.html", {
         type: "text/html",
       }),
-      // new File([imagePath], "Picture1.png", {
-      //   type: "image/png",  
-      // }),
-      // new File([imagePath2], "Picture2.png", {
-      //   type: "image/png",
-      // }),
-      new File([imagePath4], "border.png", {
+      new File([imagePath4], "border2.png", {
         type: "image/png",
       }),
-      // new File([imagePath5], "2.png", {
-      //   type: "image/png",
-      // }),
-      // new File([imagePath3], "border1.png", {
-      //   type: "image/png",
-      // }),
-      // new File([imagePath3], "border1.png", {
-      //   type: "image/png",
-      // }),
     ],
     {
       options: {
@@ -60,7 +56,7 @@ export const POST = async (req) => {
     }
   );
 
-  // pdfStream.pipe(fs.createWriteStream("./result3.pdf"));
+  pdfStream.pipe(fs.createWriteStream("./result3.pdf"));
 
   const chunks = [];
 
@@ -73,21 +69,21 @@ export const POST = async (req) => {
   const { data, error } = await resend.emails.send({
     from: "Yme.cL <send@yme.cl>",
     to: email,
-    subject: 'Hello World',
-    html: '<strong>It works!</strong>',
+    subject: "👩‍❤️‍💋‍👨Celebrate with Us! Maria and Diego's Wedding Invitation",
+    react: StackOverflowTipsEmail({ name, guest }),
     attachments: [
       {
-        filename: 'invitation.pdf',
-        content: pdfBuffer.toString('base64'),
-        encoding: 'base64',
-        contentType: 'application/pdf',
+        filename: "invitation.pdf",
+        content: pdfBuffer.toString("base64"),
+        encoding: "base64",
+        contentType: "application/pdf",
       },
     ],
   });
 
-  if (error) {
-    return console.error({ error });
-  }
+  // if (error) {
+  //   return console.error({ error });
+  // }
 
   return new Response(pdfBuffer, {
     headers: {

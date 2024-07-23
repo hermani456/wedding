@@ -16,7 +16,7 @@ const Template = ({ name, guest, email }) => {
             alt="sakura"
             className="absolute w-52 -right-10 -top-14"
           /> */}
-          <img src="border.png" alt="sakura" className="absolute left-0" />
+          <img src="border2.png" alt="Walili 🐩" className="absolute left-0" />
           {/* <img
             src="2.png"
             alt="sakura"
@@ -29,9 +29,9 @@ const Template = ({ name, guest, email }) => {
           /> */}
           <main className="pt-24 h-[100vh] flex flex-col">
             <div style={{ fontFamily: "Great Vibes" }}>
-              <h1 className="text-center text-6xl mt-36">Diego Arancibia</h1>
+              <h1 className="text-center text-6xl mt-36">Maria Sujkowska</h1>
               <h1 className="text-center text-6xl">&amp;</h1>
-              <h1 className="text-center text-6xl">Maria Arancibia</h1>
+              <h1 className="text-center text-6xl">Diego Arancibia</h1>
             </div>
             <div
               className="text-center text-lg mt-4"
