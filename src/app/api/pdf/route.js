@@ -17,7 +17,7 @@ const ff = new FileforgeClient({
 
 export const POST = async (req) => {
   const body = await req.json();
-  const { name, guest, email, invitationcode } = body;
+  const { guest, companion, email, invitationcode } = body;
 
   const code = await pool.query(
     "SELECT * FROM invitationCodes WHERE code = $1",
@@ -33,7 +33,7 @@ export const POST = async (req) => {
 
   // await pool.query("UPDATE invitationCodes SET used = true WHERE code = $1", [invitationcode]);
 
-  const HTML = await compile(<Template name={name} guest={guest} />);
+  const HTML = await compile(<Template guest={guest} companion={companion} />);
   const imagePath4 = await fss.readFile(process.cwd() + "/public/border2.png");
 
   const pdfStream = await ff.pdf.generate(
@@ -67,10 +67,10 @@ export const POST = async (req) => {
   const pdfBuffer = Buffer.concat(chunks);
 
   const { data, error } = await resend.emails.send({
-    from: "Yme.cL <send@yme.cl>",
+    from: "Maria & Diego <send@yme.cl>",
     to: email,
     subject: "👩‍❤️‍💋‍👨Celebrate with Us! Maria and Diego's Wedding Invitation",
-    react: StackOverflowTipsEmail({ name, guest }),
+    react: StackOverflowTipsEmail({ guest, companion }),
     attachments: [
       {
         filename: "invitation.pdf",
@@ -81,21 +81,15 @@ export const POST = async (req) => {
     ],
   });
 
-  // if (error) {
-  //   return console.error({ error });
-  // }
+  if (error) {
+    return NextResponse.json({ error }, { status: 500 });
+  }
 
-  return new Response(pdfBuffer, {
-    headers: {
-      "Content-Type": "application/pdf",
-    },
-  });
+  if (data) {
+    return NextResponse.json("Email sent", { status: 200 });
+  }
 
-  // if (error) {
-  //   return NextResponse.json({ error }, { status: 500 });
-  // }
-
-  // const pdfBuffer = Buffer.from(pdfStream);
+  // return NextResponse.json({ data });
 
   // return new Response(pdfBuffer, {
   //   headers: {
@@ -103,3 +97,13 @@ export const POST = async (req) => {
   //   },
   // });
 };
+
+
+export const GET = async () => {
+
+  const code = await pool.query(
+    "SELECT * FROM invitationCodes;"
+  );
+
+  return NextResponse.json(code.rows);
+}

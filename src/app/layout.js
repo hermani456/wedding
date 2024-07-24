@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={playfairDisplay.className}>
+      <body className={inter.className}>
         <Nv />
         {children}
       </body>

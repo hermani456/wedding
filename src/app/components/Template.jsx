@@ -1,8 +1,8 @@
-import { Footnote, Tailwind, CSS } from "@fileforge/react-print";
+import { Tailwind, CSS } from "@fileforge/react-print";
 
-const Template = ({ name, guest, email }) => {
+const Template = ({ guest, companion }) => {
   return (
-    <div style={{  color: "#2b3d58" }}>
+    <div style={{ color: "#2b3d58" }}>
       <CSS>{`@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");@page {size: Letter;margin-top:0cm;margin-left:0cm;margin-right:0;margin-bottom:0cm;}`}</CSS>
       <Tailwind className="relative">
         <div className="ml-[2cm] mr-[2cm] ">
@@ -69,6 +69,14 @@ const Template = ({ name, guest, email }) => {
                 <h3>404 Not Found Street</h3>
                 <h3>Poland</h3>
               </div>
+            </div>
+            <div>
+              <h3
+                className="text-center mt-10 font-semibold"
+                style={{ fontFamily: "Raleway" }}
+              >
+                {guest} {companion && `& ${companion}`}
+              </h3>
             </div>
           </main>
         </div>

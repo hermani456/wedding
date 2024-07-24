@@ -55,3 +55,7 @@ INSERT INTO invitationCodes (code) VALUES('6e2ebd9bdf504b09');
 INSERT INTO invitationCodes (code) VALUES('42900c32e3df4137');
 INSERT INTO invitationCodes (code) VALUES('d5d7d18643a1447a');
 INSERT INTO invitationCodes (code) VALUES('073110de209c44d0');
+
+user postgres pw 'la wea 123' db 'flaco' host 'localhost' port '5432'
+
+psql -U postgres -h localhost -p 5432 -d flaco

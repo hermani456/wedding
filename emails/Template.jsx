@@ -39,7 +39,7 @@ const PropDefaults = {
   ],
 };
 
-export const StackOverflowTipsEmail = ({ name, guest }) => (
+export const StackOverflowTipsEmail = ({ guest, companion }) => (
   <Html>
     <Head />
     <Preview>You're Invited to Celebrate Our Wedding!</Preview>
@@ -71,7 +71,7 @@ export const StackOverflowTipsEmail = ({ name, guest }) => (
 
         <Section style={content}>
           <Heading as="h2" style={title}>
-            Dear {name}, and {guest}
+            Dear {guest} {companion && `and ${companion}`},
           </Heading>
           <Text style={paragraph}>
             We are thrilled to invite you to celebrate our wedding. It would be
