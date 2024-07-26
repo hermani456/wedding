@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* .asd{
+  font-weight: 800;
+} */
+
 @layer base {
   :root {
     --background: 0 0% 100%;

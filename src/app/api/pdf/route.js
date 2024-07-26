@@ -33,8 +33,17 @@ export const POST = async (req) => {
 
   // await pool.query("UPDATE invitationCodes SET used = true WHERE code = $1", [invitationcode]);
 
+  // await pool.query(
+  //   "UPDATE invitationCodes SET used = true, guest = $1, companion = $2 WHERE code = $3",
+  //   [guest, companion, invitationcode]
+  // );
+ 
   const HTML = await compile(<Template guest={guest} companion={companion} />);
   const imagePath4 = await fss.readFile(process.cwd() + "/public/border2.png");
+  const imagePath1 = await fss.readFile(process.cwd() + "/public/1.webp");
+  const imagePath2 = await fss.readFile(process.cwd() + "/public/2.webp");
+  const imagePath3 = await fss.readFile(process.cwd() + "/public/3.webp");
+  const imagePath5 = await fss.readFile(process.cwd() + "/public/plantas.png");
 
   const pdfStream = await ff.pdf.generate(
     [
@@ -42,6 +51,18 @@ export const POST = async (req) => {
         type: "text/html",
       }),
       new File([imagePath4], "border2.png", {
+        type: "image/png",
+      }),
+      new File([imagePath1], "1.webp", {
+        type: "image/webp",
+      }),
+      new File([imagePath2], "2.webp", {
+        type: "image/webp",
+      }),
+      new File([imagePath3], "3.webp", {
+        type: "image/webp",
+      }),
+      new File([imagePath5], "plantas.png", {
         type: "image/png",
       }),
     ],
@@ -58,52 +79,44 @@ export const POST = async (req) => {
 
   pdfStream.pipe(fs.createWriteStream("./result3.pdf"));
 
-  const chunks = [];
+  return NextResponse.json("Email sent", { status: 200 });
 
-  for await (const chunk of pdfStream) {
-    chunks.push(chunk);
-  }
+  // const chunks = [];
 
-  const pdfBuffer = Buffer.concat(chunks);
+  // for await (const chunk of pdfStream) {
+  //   chunks.push(chunk);
+  // }
 
-  const { data, error } = await resend.emails.send({
-    from: "Maria & Diego <send@yme.cl>",
-    to: email,
-    subject: "👩‍❤️‍💋‍👨Celebrate with Us! Maria and Diego's Wedding Invitation",
-    react: StackOverflowTipsEmail({ guest, companion }),
-    attachments: [
-      {
-        filename: "invitation.pdf",
-        content: pdfBuffer.toString("base64"),
-        encoding: "base64",
-        contentType: "application/pdf",
-      },
-    ],
-  });
+  // const pdfBuffer = Buffer.concat(chunks);
 
-  if (error) {
-    return NextResponse.json({ error }, { status: 500 });
-  }
-
-  if (data) {
-    return NextResponse.json("Email sent", { status: 200 });
-  }
-
-  // return NextResponse.json({ data });
-
-  // return new Response(pdfBuffer, {
-  //   headers: {
-  //     "Content-Type": "application/pdf",
-  //   },
+  // const { data, error } = await resend.emails.send({
+  //   from: "Maria & Diego <send@yme.cl>",
+  //   to: email,
+  //   subject: "👩‍❤️‍💋‍👨Celebrate with Us! Maria and Diego's Wedding Invitation",
+  //   react: StackOverflowTipsEmail({ guest, companion }),
+  //   attachments: [
+  //     {
+  //       filename: "invitation.pdf",
+  //       content: pdfBuffer.toString("base64"),
+  //       encoding: "base64",
+  //       contentType: "application/pdf",
+  //     },
+  //   ],
   // });
+
+  // if (error) {
+  //   return NextResponse.json({ error }, { status: 500 });
+  // }
+
+  // if (data) {
+  //   return NextResponse.json("Email sent", { status: 200 });
+  // }
 };
 
-
 export const GET = async () => {
-
   const code = await pool.query(
-    "SELECT * FROM invitationCodes;"
+    "SELECT * FROM invitationCodes ORDER BY guest IS NULL, guest;"
   );
 
   return NextResponse.json(code.rows);
-}
+};

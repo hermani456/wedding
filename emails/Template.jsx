@@ -45,25 +45,21 @@ export const StackOverflowTipsEmail = ({ guest, companion }) => (
     <Preview>You're Invited to Celebrate Our Wedding!</Preview>
     <Body style={main}>
       <Container style={container}>
-        {/* <Section style={logo}>
-          <Img width={146} src={`${baseUrl}/static/stack-overflow-logo.png`} />
-        </Section> */}
-
         <Section style={header}>
           <Row>
             <Column style={headerContent}>
               <Heading style={headerContentTitle}>
-                Join Us for Our Special Day! 🌸
+                Our Special Celebration <br /> Awaits Our Most Special Guests 🌸
               </Heading>
               <Text style={headerContentSubtitle}>
-                Maria and Diego's Wedding Invitation
+                Arancibia-Sujkowska's Wedding Invitation
               </Text>
             </Column>
             <Column style={headerImageContainer}>
               <Img
                 style={headerImage}
                 width={340}
-                src={`https://i.imgur.com/fUJB9FB.png`}
+                src={`https://i.imgur.com/8Vvjpyh.png`}
               />
             </Column>
           </Row>
@@ -78,33 +74,17 @@ export const StackOverflowTipsEmail = ({ guest, companion }) => (
             our honor to have you with us on this special day. Please find the
             invitation attached for all the details.
           </Text>
-
           <Hr style={divider} />
-
-          <Text style={paragraph}>
-            Date: [Wedding Date] <br />
-            Time: [Wedding Time] <br />
-            Venue: [Wedding Venue] <br />
+          <Text style={paragraph2}>
+            Considering the activities on September 13th, we would like to know
+            in advance if you will be participating in the welcome event, so we
+            can share a great experience together prior to our main event.
             <br />
-            We look forward to sharing this joyous occasion with you and your
-            companions.
+            If you have any special requirements (diet, allergies, reduced
+            mobility, etc.), please email us in advance so we can consider them
+            and ensure everyone enjoys together.
           </Text>
-          {/* <ul>
-            {tips.map((tip) => (
-              <li key={tip.id}>
-                <Text style={paragraph}>{tip.description}</Text>
-              </li>
-            ))}
-          </ul> */}
-
-          {/* <Text style={paragraph}>
-            The more information you can put in the search bar, the more likely
-            you will be to either find the answer you need or feel confident
-            that no one else has asked the question before.
-          </Text> */}
-
           <Hr style={divider} />
-
           <Heading as="h2" style={title}>
             With love, <br />
             Maria and Diego
@@ -189,6 +169,12 @@ const paragraph = {
   fontSize: "15px",
   lineHeight: "21px",
   color: "#3c3f44",
+};
+const paragraph2 = {
+  fontSize: "13px",
+  lineHeight: "21px",
+  color: "#3c3f44",
+  fontWeight: 600,
 };
 
 const divider = {

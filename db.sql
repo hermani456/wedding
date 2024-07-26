@@ -1,6 +1,8 @@
 CREATE TABLE invitationCodes (
     code VARCHAR(255) PRIMARY KEY,
     used BOOLEAN NOT NULL DEFAULT FALSE
+    guest VARCHAR(255) NOT NULL,
+    companion VARCHAR(255)
 );
 
 -- 6 digits random values for the codes
