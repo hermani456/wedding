@@ -5,6 +5,13 @@ CREATE TABLE invitationCodes (
     companion VARCHAR(255)
 );
 
+CREATE TABLE guests (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(100) NOT NULL,
+    guest VARCHAR(100) NOT NULL,
+    companion VARCHAR(100)
+);
+
 -- 6 digits random values for the codes
 
 INSERT INTO invitationCodes (code) VALUES('0c79b3567a914495');

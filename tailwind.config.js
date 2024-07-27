@@ -19,6 +19,7 @@ module.exports = {
     extend: {
       colors: {
         uno: "#151e2b",
+        unolight: "#203048",
         dos: "#f8b195",
         tres: "#d4af37",
         cuatro: "#e3ded6",
@@ -57,7 +58,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        "great-vibes": ["Great Vibes", "cursive"],
+        "raleway": ['var(--font-raleway)'],
+        "greatVibes": ['var(--font-greatVibes)'],
       },
       borderRadius: {
         lg: "var(--radius)",

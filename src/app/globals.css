@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .asd{
-  font-weight: 800;
-} */
+body{
+  background-color: #e3ded6;
+}
 
 @layer base {
   :root {
