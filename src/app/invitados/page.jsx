@@ -34,20 +34,18 @@ export default function Page() {
         <TableHeader>
           <TableRow>
             {/* <TableHead className="w-[100px]">Invoice</TableHead> */}
-            <TableHead>Codigo Invitado</TableHead>
-            <TableHead>Invitado</TableHead>
-            <TableHead>Acompañante</TableHead>
-            <TableHead>Usado</TableHead>
+            <TableHead>Email</TableHead>
+            <TableHead>Guest</TableHead>
+            <TableHead>Companion</TableHead>
             {/* <TableHead className="text-right">Amount</TableHead> */}
           </TableRow>
         </TableHeader>
         <TableBody>
           {data.map((row) => (
-            <TableRow key={row.code}>
-              <TableCell>{row.code}</TableCell>
+            <TableRow key={row.id}>
+              <TableCell>{row.email}</TableCell>
               <TableCell>{row.guest}</TableCell>
               <TableCell>{row.companion}</TableCell>
-              <TableCell>{row.used ? "Yes" : "No"}</TableCell>
             </TableRow>
           ))}
         </TableBody>

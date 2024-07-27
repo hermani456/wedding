@@ -119,7 +119,7 @@ export const POST = async (req) => {
 
 export const GET = async () => {
   const code = await pool.query(
-    "SELECT * FROM invitationCodes ORDER BY guest IS NULL, guest;"
+    "SELECT * FROM guests;"
   );
 
   return NextResponse.json(code.rows);
