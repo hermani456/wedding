@@ -8,6 +8,8 @@ import { promises as fss } from "fs";
 import { Resend } from "resend";
 import { StackOverflowTipsEmail } from "../../../../emails/Template";
 import pool from "../../../utils/db";
+// import { File } from "@fileforge/client/dist/esm/client/codegen/core/schemas";
+import { File } from "formdata-node";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 

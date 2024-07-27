@@ -81,7 +81,7 @@ export const StackOverflowTipsEmail = ({ guest, companion }) => (
             can share a great experience together prior to our main event.
             <br />
             If you have any special requirements (diet, allergies, reduced
-            mobility, etc.), please email us in advance so we can consider them
+            mobility, etc.), please email us to diego.arancibia@yme.cl in advance so we can consider them
             and ensure everyone enjoys together.
           </Text>
           <Hr style={divider} />
