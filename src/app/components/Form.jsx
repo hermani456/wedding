@@ -30,8 +30,8 @@ const Form = () => {
       setIsLoading(false);
       alert("Error sending RSVP");
     }
-    // const data = await res.json();
-    // console.log(data)
+    const data = await res.json();
+    console.log(data)
     // if (data.error) {
     //   alert(data.error);
     // }
