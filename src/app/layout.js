@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
 import { Playfair_Display } from "next/font/google";
 import Nv from "./components/Nv";
 

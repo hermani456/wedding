@@ -17,19 +17,20 @@ const ff = new FileforgeClient({
 
 export const POST = async (req) => {
   const body = await req.json();
+  console.log(body);
   const { guest, companion, email, invitationcode } = body;
 
-  const code = await pool.query(
-    "SELECT * FROM invitationCodes WHERE code = $1",
-    [invitationcode]
-  );
+  // const code = await pool.query(
+  //   "SELECT * FROM invitationCodes WHERE code = $1",
+  //   [invitationcode]
+  // );
 
-  if (code.rows.length === 0 || code.rows[0].used) {
-    return NextResponse.json(
-      { error: "Invalid invitation code" },
-      { status: 400 }
-    );
-  }
+  // if (code.rows.length === 0 || code.rows[0].used) {
+  //   return NextResponse.json(
+  //     { error: "Invalid invitation code" },
+  //     { status: 400 }
+  //   );
+  // }
 
   // await pool.query("UPDATE invitationCodes SET used = true WHERE code = $1", [invitationcode]);
 

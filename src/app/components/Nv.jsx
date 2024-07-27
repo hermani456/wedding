@@ -52,7 +52,7 @@ export default function Component() {
         >
           About
         </Link>
-        <div className="flex-grow w-96"></div>
+        {/* <div className="flex-grow w-96"></div> */}
         <Link
           href="#"
           className="text-white flex justify-center items-center hover:text-dos text-xl transition-colors"
