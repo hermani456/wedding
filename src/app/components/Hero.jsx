@@ -1,9 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import photo from "../../../public/1.webp";
-import mariaydiego from "../../../public/mariaydiego.png";
-import diegoymaria from "../../../public/diegoymaria.png";
 import diegomaria from "../../../public/diegomaria.png";
 import { Button } from "./ui/button";
 import Link from "next/link";
@@ -11,7 +8,13 @@ import music from "../../../public/music.mp3";
 
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(new Audio(music));
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      audioRef.current = new Audio(music);
+    }
+  }, []);
 
   const handlePlayPause = () => {
     if (isPlaying) {
