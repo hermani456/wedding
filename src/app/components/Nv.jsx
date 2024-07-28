@@ -1,4 +1,9 @@
-import { Sheet, SheetTrigger, SheetContent } from "@/app/components/ui/sheet";
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetClose,
+} from "@/app/components/ui/sheet";
 import { Button } from "@/app/components/ui/button";
 import Link from "next/link";
 
@@ -13,32 +18,34 @@ export default function Component() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left">
-          <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-            <MountainIcon className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
-          </Link>
           <div className="grid gap-2 py-6">
-            <Link
-              href="#home"
-              className="flex w-full items-center py-2 text-lg font-semibold"
-              prefetch={false}
-            >
-              Home
-            </Link>
-            <Link
-              href="#rsvp"
-              className="flex w-full items-center py-2 text-lg font-semibold"
-              prefetch={false}
-            >
-              RSVP
-            </Link>
-            <Link
-              href="#gallery"
-              className="flex w-full items-center py-2 text-lg font-semibold"
-              prefetch={false}
-            >
-              Gallery
-            </Link>
+            <SheetClose asChild>
+              <Link
+                href="#home"
+                className="flex w-full items-center py-2 text-lg font-semibold"
+                prefetch={false}
+              >
+                Home
+              </Link>
+            </SheetClose>
+            <SheetClose asChild>
+              <Link
+                href="#rsvp"
+                className="flex w-full items-center py-2 text-lg font-semibold"
+                prefetch={false}
+              >
+                RSVP
+              </Link>
+            </SheetClose>
+            <SheetClose asChild>
+              <Link
+                href="#gallery"
+                className="flex w-full items-center py-2 text-lg font-semibold"
+                prefetch={false}
+              >
+                Gallery
+              </Link>
+            </SheetClose>
           </div>
         </SheetContent>
       </Sheet>
