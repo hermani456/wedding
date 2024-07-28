@@ -16,7 +16,7 @@ export default function Page() {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
-    const response = await fetch("http://localhost:3000/api/pdf");
+    const response = await fetch("/api/pdf");
     const data = await response.json();
     setData(data);
     console.log(data.map((row) => row.used));
