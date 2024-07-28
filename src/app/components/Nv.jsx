@@ -19,21 +19,21 @@ export default function Component() {
           </Link>
           <div className="grid gap-2 py-6">
             <Link
-              href="#"
+              href="#home"
               className="flex w-full items-center py-2 text-lg font-semibold"
               prefetch={false}
             >
               Home
             </Link>
             <Link
-              href="#"
+              href="#rsvp"
               className="flex w-full items-center py-2 text-lg font-semibold"
               prefetch={false}
             >
               RSVP
             </Link>
             <Link
-              href="#"
+              href="#gallery"
               className="flex w-full items-center py-2 text-lg font-semibold"
               prefetch={false}
             >
@@ -48,14 +48,14 @@ export default function Component() {
       </Link> */}
       <nav className="mx-auto hidden lg:flex gap-6">
         <Link
-          href="#"
+          href="#home"
           className="text-white flex justify-center items-center hover:text-dos text-xl transition-colors"
           prefetch={false}
         >
           Home
         </Link>
         <Link
-          href="#"
+          href="#rsvp"
           className="text-white flex justify-center items-center hover:text-dos text-xl transition-colors"
           prefetch={false}
         >
@@ -63,7 +63,7 @@ export default function Component() {
         </Link>
         {/* <div className="flex-grow w-96"></div> */}
         <Link
-          href="#"
+          href="#gallery"
           className="text-white flex justify-center items-center hover:text-dos text-xl transition-colors"
           prefetch={false}
         >

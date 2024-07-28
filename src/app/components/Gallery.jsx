@@ -1,13 +1,176 @@
-import { Carousel } from "./ui/carousel";
+// "use client";
+// import {
+//   Carousel,
+//   CarouselContent,
+//   CarouselItem,
+//   CarouselNext,
+//   CarouselPrevious,
+// } from "./ui/carousel";
+// import Image from "next/image";
 
-export default function Gallery() {
+// const images = [
+//   "https://i.imgur.com/3dHfvOk.jpg",
+//   "https://i.imgur.com/dciY69O.jpg",
+//   "https://i.imgur.com/8UEUlks.jpg",
+//   "https://i.imgur.com/QghS3lK.jpg",
+//   "https://i.imgur.com/69VmXIE.jpg",
+//   "https://i.imgur.com/IXtZDa6.jpg",
+//   "https://i.imgur.com/sw3MPFh.jpg",
+//   "https://i.imgur.com/L0OepAz.jpg",
+//   "https://i.imgur.com/3KzlZMI.jpg",
+//   "https://i.imgur.com/rA3Dby3.jpg",
+//   "https://i.imgur.com/m927hkb.jpg",
+//   "https://i.imgur.com/GIOssTT.jpg",
+//   "https://i.imgur.com/5uzxoP6.jpg",
+//   "https://i.imgur.com/nUxahHk.jpg",
+// ];
+
+// export function Gallery() {
+//   return (
+//     <Carousel className="w-full max-w-xs">
+//       <CarouselContent>
+//         {images.map((image, index) => (
+//           <CarouselItem key={index}>
+//             <div className="p-1">
+//               <Image
+//                 src={image}
+//                 alt="Random image"
+//                 width={500}
+//                 height={500}
+//               />
+//             </div>
+//           </CarouselItem>
+//         ))}
+//       </CarouselContent>
+//       <CarouselPrevious />
+//       <CarouselNext />
+//     </Carousel>
+//   );
+// }
+
+// export default Gallery;
+
+// const links = `"https://i.imgur.com/sw3MPFh.jpg", "https://i.imgur.com/L0OepAz.jpg", "https://i.imgur.com/3KzlZMI.jpg", "https://i.imgur.com/rA3Dby3.jpg", "https://i.imgur.com/m927hkb.jpg", "https://i.imgur.com/GIOssTT.jpg", "https://i.imgur.com/5uzxoP6.jpg", "https://i.imgur.com/nUxahHk.jpg"`;
+
+// const images = [
+//   "https://i.imgur.com/3dHfvOk.jpg",
+//   "https://i.imgur.com/dciY69O.jpg",
+//   "https://i.imgur.com/8UEUlks.jpg",
+//   "https://i.imgur.com/QghS3lK.jpg",
+//   "https://i.imgur.com/69VmXIE.jpg",
+//   "https://i.imgur.com/IXtZDa6.jpg",
+//   "https://i.imgur.com/sw3MPFh.jpg",
+//   "https://i.imgur.com/L0OepAz.jpg",
+//   "https://i.imgur.com/3KzlZMI.jpg",
+//   "https://i.imgur.com/rA3Dby3.jpg",
+//   "https://i.imgur.com/m927hkb.jpg",
+//   "https://i.imgur.com/GIOssTT.jpg",
+//   "https://i.imgur.com/5uzxoP6.jpg",
+//   "https://i.imgur.com/nUxahHk.jpg",
+// ];
+import Image from "next/image";
+const Gallery = () => {
   return (
-    <Carousel>
-      <img src="/gallery/1.jpg" alt="Gallery 1" />
-      <img src="/gallery/2.jpg" alt="Gallery 2" />
-      <img src="/gallery/3.jpg" alt="Gallery 3" />
-      <img src="/gallery/4.jpg" alt="Gallery 4" />
-      <img src="/gallery/5.jpg" alt="Gallery 5" />
-    </Carousel>
+    <div id="gallery" className="mb-10">
+      <h2 className="text-center text-5xl my-5 font-greatVibes text-unolight">
+        Photo Gallery
+      </h2>
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="grid gap-4">
+          <Image
+            src="https://i.imgur.com/XKnToDp.jpg"
+            alt="Random image"
+            width={500}
+            height={200}
+            className="object-cover rounded"
+          />
+          <Image
+            src="https://i.imgur.com/dciY69O.jpg"
+            alt="Random image"
+            width={500}
+            height={900}
+            className="object-cover rounded"
+          />
+          <Image
+            src="https://i.imgur.com/M60WjnX.jpg"
+            alt="Random image"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+        </div>
+        <div className="grid gap-4">
+          <Image
+            src="https://i.imgur.com/QghS3lK.jpg"
+            alt="Random image"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+          <Image
+            src="https://i.imgur.com/69VmXIE.jpg"
+            alt="Random image"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+          <Image
+            src="https://i.imgur.com/IXtZDa6.jpg"
+            alt="Random image"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+        </div>
+        <div className="grid gap-4">
+          <Image
+            src="https://i.imgur.com/sw3MPFh.jpg"
+            alt="Random image"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+          <Image
+            src="https://i.imgur.com/MRieZAT.jpg"
+            alt="Random image"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+          <Image
+            src="https://i.imgur.com/3KzlZMI.jpg"
+            alt="Random image"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+        </div>
+        <div className="grid gap-4">
+          <Image
+            src="https://i.imgur.com/rA3Dby3.jpg"
+            alt="Random image"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+          <Image
+            src="https://i.imgur.com/m927hkb.jpg"
+            alt="Random image"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+          <Image
+            src="https://i.imgur.com/5uzxoP6.jpg"
+            alt="Random image"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default Gallery;
