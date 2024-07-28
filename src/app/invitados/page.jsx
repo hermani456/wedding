@@ -30,7 +30,7 @@ export default function Page() {
     <Container>
       <h1 className="text-xl text-center my-5">Invitados Confirmados</h1>
       <Table>
-        <TableCaption>A list of your recent invoices.</TableCaption>
+        <TableCaption>Guests list.</TableCaption>
         <TableHeader>
           <TableRow>
             {/* <TableHead className="w-[100px]">Invoice</TableHead> */}
