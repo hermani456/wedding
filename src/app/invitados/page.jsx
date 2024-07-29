@@ -19,7 +19,6 @@ export default function Page() {
     const response = await fetch("/api/pdf");
     const data = await response.json();
     setData(data);
-    console.log(data.map((row) => row.used));
   };
 
   useEffect(() => {

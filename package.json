@@ -27,6 +27,7 @@
     "react-dom": "^18",
     "react-email": "2.1.5",
     "resend": "^3.4.0",
+    "sharp": "^0.33.4",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
   },
