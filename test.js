@@ -17,7 +17,21 @@
 
 // just need 16 characters
 
-for (let i = 0; i < 50; i++) {
-  const shortId = crypto.randomUUID().split("-").join("").substring(0, 16);
-  console.log(`INSERT INTO invitationCodes (code) VALUES('${shortId}');`);
-}
+// for (let i = 0; i < 50; i++) {
+//   const shortId = crypto.randomUUID().split("-").join("").substring(0, 16);
+//   console.log(`INSERT INTO invitationCodes (code) VALUES('${shortId}');`);
+// }
+
+// img_1527
+// img_1065
+// img_1871
+// img_5330
+// img_7624
+// img_6659
+// img_6045
+
+// 4
+// 12
+// 3
+
+// cambiar nombre de invitados en pdf 

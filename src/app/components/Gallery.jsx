@@ -68,6 +68,10 @@
 //   "https://i.imgur.com/5uzxoP6.jpg",
 //   "https://i.imgur.com/nUxahHk.jpg",
 // ];
+
+// https://i.ibb.co/DMRNRRs/20.webp
+// https://ibb.co/8McW6sH
+// https://ibb.co/0GnnGjf
 import Image from "next/image";
 const Gallery = () => {
   return (
@@ -92,7 +96,7 @@ const Gallery = () => {
             className="object-cover rounded"
           />
           <Image
-            src="https://i.ibb.co/bPcV6Sr/3.webp"
+            src="https://i.postimg.cc/76d09H75/21.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
@@ -101,7 +105,7 @@ const Gallery = () => {
         </div>
         <div className="grid gap-4">
           <Image
-            src="https://i.ibb.co/hmHzpQZ/4.webp"
+            src="https://i.postimg.cc/gjhRBCqN/20.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
@@ -161,7 +165,7 @@ const Gallery = () => {
             className="object-cover rounded"
           />
           <Image
-            src="https://i.ibb.co/kD4wGjM/12.webp"
+            src="https://i.postimg.cc/gJn33Xw9/22.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
