@@ -78,22 +78,22 @@ const Gallery = () => {
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         <div className="grid gap-4">
           <Image
-            src="https://i.imgur.com/XKnToDp.jpg"
-            alt="Random image"
+            src="https://i.imgur.com/XKnToDp.jpeg"
+            alt="Maria y Diego"
             width={500}
             height={200}
             className="object-cover rounded"
           />
           <Image
-            src="https://i.imgur.com/dciY69O.jpg"
-            alt="Random image"
+            src="https://i.imgur.com/dciY69O.jpeg"
+            alt="Maria y Diego"
             width={500}
             height={900}
             className="object-cover rounded"
           />
           <Image
-            src="https://i.imgur.com/M60WjnX.jpg"
-            alt="Random image"
+            src="https://i.imgur.com/M60WjnX.jpeg"
+            alt="Maria y Diego"
             width={500}
             height={500}
             className="object-cover rounded"
@@ -101,45 +101,22 @@ const Gallery = () => {
         </div>
         <div className="grid gap-4">
           <Image
-            src="https://i.imgur.com/QghS3lK.jpg"
-            alt="Random image"
+            src="https://i.imgur.com/QghS3lK.jpeg"
+            alt="Maria y Diego"
             width={500}
             height={500}
             className="object-cover rounded"
           />
           <Image
-            src="https://i.imgur.com/69VmXIE.jpg"
-            alt="Random image"
+            src="https://i.imgur.com/69VmXIE.jpeg"
+            alt="Maria y Diego"
             width={500}
             height={500}
             className="object-cover rounded"
           />
           <Image
-            src="https://i.imgur.com/IXtZDa6.jpg"
-            alt="Random image"
-            width={500}
-            height={500}
-            className="object-cover rounded"
-          />
-        </div>
-        <div className="grid gap-4">
-          <Image
-            src="https://i.imgur.com/sw3MPFh.jpg"
-            alt="Random image"
-            width={500}
-            height={500}
-            className="object-cover rounded"
-          />
-          <Image
-            src="https://i.imgur.com/MRieZAT.jpg"
-            alt="Random image"
-            width={500}
-            height={500}
-            className="object-cover rounded"
-          />
-          <Image
-            src="https://i.imgur.com/3KzlZMI.jpg"
-            alt="Random image"
+            src="https://i.imgur.com/IXtZDa6.jpeg"
+            alt="Maria y Diego"
             width={500}
             height={500}
             className="object-cover rounded"
@@ -147,22 +124,45 @@ const Gallery = () => {
         </div>
         <div className="grid gap-4">
           <Image
-            src="https://i.imgur.com/rA3Dby3.jpg"
-            alt="Random image"
+            src="https://i.imgur.com/sw3MPFh.jpeg"
+            alt="Maria y Diego"
             width={500}
             height={500}
             className="object-cover rounded"
           />
           <Image
-            src="https://i.imgur.com/m927hkb.jpg"
-            alt="Random image"
+            src="https://i.imgur.com/MRieZAT.jpeg"
+            alt="Maria y Diego"
             width={500}
             height={500}
             className="object-cover rounded"
           />
           <Image
-            src="https://i.imgur.com/5uzxoP6.jpg"
-            alt="Random image"
+            src="https://i.imgur.com/3KzlZMI.jpeg"
+            alt="Maria y Diego"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+        </div>
+        <div className="grid gap-4">
+          <Image
+            src="https://i.imgur.com/rA3Dby3.jpeg"
+            alt="Maria y Diego"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+          <Image
+            src="https://i.imgur.com/m927hkb.jpeg"
+            alt="Maria y Diego"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+          <Image
+            src="https://i.imgur.com/5uzxoP6.jpeg"
+            alt="Maria y Diego"
             width={500}
             height={500}
             className="object-cover rounded"
