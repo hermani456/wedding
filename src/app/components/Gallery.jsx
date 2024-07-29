@@ -78,21 +78,21 @@ const Gallery = () => {
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         <div className="grid gap-4">
           <Image
-            src="https://i.ibb.co/kQKXz1V/XKnToDp.jpg"
+            src="https://i.ibb.co/swTJJXQ/1.webp"
             alt="Maria y Diego"
             width={500}
             height={200}
             className="object-cover rounded"
           />
           <Image
-            src="https://i.imgur.com/dciY69O.jpeg"
+            src="https://i.ibb.co/WyzKynh/2.webp"
             alt="Maria y Diego"
             width={500}
             height={900}
             className="object-cover rounded"
           />
           <Image
-            src="https://i.imgur.com/M60WjnX.jpeg"
+            src="https://i.ibb.co/bPcV6Sr/3.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
@@ -101,44 +101,21 @@ const Gallery = () => {
         </div>
         <div className="grid gap-4">
           <Image
-            src="https://i.imgur.com/QghS3lK.jpeg"
+            src="https://i.ibb.co/hmHzpQZ/4.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
             className="object-cover rounded"
           />
           <Image
-            src="https://i.imgur.com/69VmXIE.jpeg"
+            src="https://i.ibb.co/mJkcZ67/5.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
             className="object-cover rounded"
           />
           <Image
-            src="https://i.imgur.com/IXtZDa6.jpeg"
-            alt="Maria y Diego"
-            width={500}
-            height={500}
-            className="object-cover rounded"
-          />
-        </div>
-        <div className="grid gap-4">
-          <Image
-            src="https://i.imgur.com/sw3MPFh.jpeg"
-            alt="Maria y Diego"
-            width={500}
-            height={500}
-            className="object-cover rounded"
-          />
-          <Image
-            src="https://i.imgur.com/MRieZAT.jpeg"
-            alt="Maria y Diego"
-            width={500}
-            height={500}
-            className="object-cover rounded"
-          />
-          <Image
-            src="https://i.imgur.com/3KzlZMI.jpeg"
+            src="https://i.ibb.co/3ydDrZT/6.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
@@ -147,21 +124,44 @@ const Gallery = () => {
         </div>
         <div className="grid gap-4">
           <Image
-            src="https://i.imgur.com/rA3Dby3.jpeg"
+            src="https://i.ibb.co/ypnmhZ6/7.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
             className="object-cover rounded"
           />
           <Image
-            src="https://i.imgur.com/m927hkb.jpeg"
+            src="https://i.ibb.co/TBsx6yK/8.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
             className="object-cover rounded"
           />
           <Image
-            src="https://i.imgur.com/5uzxoP6.jpeg"
+            src="https://i.ibb.co/WBNpSyw/9.webp"
+            alt="Maria y Diego"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+        </div>
+        <div className="grid gap-4">
+          <Image
+            src="https://i.ibb.co/znNhCLB/10.webp"
+            alt="Maria y Diego"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+          <Image
+            src="https://i.ibb.co/hW3xJK5/11.webp"
+            alt="Maria y Diego"
+            width={500}
+            height={500}
+            className="object-cover rounded"
+          />
+          <Image
+            src="https://i.ibb.co/kD4wGjM/12.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
