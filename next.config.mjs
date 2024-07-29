@@ -22,6 +22,11 @@ const nextConfig = {
         hostname: "**.imgur.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "**.ibb.co",
+        port: "",
+      }
     ],
   },
 };

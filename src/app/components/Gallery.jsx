@@ -78,7 +78,7 @@ const Gallery = () => {
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         <div className="grid gap-4">
           <Image
-            src="https://i.imgur.com/XKnToDp.jpeg"
+            src="https://i.ibb.co/kQKXz1V/XKnToDp.jpg"
             alt="Maria y Diego"
             width={500}
             height={200}
