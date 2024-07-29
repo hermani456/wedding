@@ -7,6 +7,7 @@ const Form = () => {
   const [email, setEmail] = useState("");
   const [guest, setGuest] = useState("");
   const [companion, setCompanion] = useState("");
+  const [address, setAddress] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -14,7 +15,7 @@ const Form = () => {
     setIsLoading(true);
     const res = await fetch("/api/pdf", {
       method: "POST",
-      body: JSON.stringify({ email, guest, companion }),
+      body: JSON.stringify({ email, guest, companion, address }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -31,7 +32,7 @@ const Form = () => {
       alert("Error sending RSVP");
     }
     const data = await res.json();
-    console.log(data)
+    console.log(data);
     // if (data.error) {
     //   alert(data.error);
     // }
@@ -68,7 +69,7 @@ const Form = () => {
             htmlFor="guest"
             className="block mb-2 text-sm font-medium text-unolight dark:text-white"
           >
-            Your name
+            Your full name
           </label>
           <input
             type="text"
@@ -84,7 +85,7 @@ const Form = () => {
             htmlFor="companion"
             className="block mb-2 text-sm font-medium text-unolight dark:text-white"
           >
-            Your companion name
+            Your companion's full name
           </label>
           <input
             type="text"
@@ -93,6 +94,24 @@ const Form = () => {
             value={companion}
             className="bg-gray-50 border border-gray-300 text-unolight text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
+        </div>
+        <div className="mb-5">
+          <label
+            htmlFor="companion"
+            className="block mb-2 text-sm font-medium text-unolight dark:text-white"
+          >
+            Home address
+          </label>
+          <input
+            type="text"
+            id="companion"
+            onChange={(e) => setAddress(e.target.value)}
+            value={address}
+            className="bg-gray-50 border border-gray-300 text-unolight text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+          <span className="text-sm">
+            If you need a paper invitation please indicate your home address
+          </span>
         </div>
         <Button
           type="submit"

@@ -20,11 +20,11 @@ const ff = new FileforgeClient({
 export const POST = async (req) => {
   const body = await req.json();
   console.log(body);
-  const { email, guest, companion } = body;
+  const { email, guest, companion, address } = body;
 
   await pool.query(
-    "INSERT INTO guests (email, guest, companion) VALUES ($1, $2, $3)",
-    [email, guest, companion]
+    "INSERT INTO guests (email, guest, companion, address) VALUES ($1, $2, $3, $4)",
+    [email, guest, companion, address]
   );
 
   // const code = await pool.query(
@@ -118,9 +118,7 @@ export const POST = async (req) => {
 };
 
 export const GET = async () => {
-  const code = await pool.query(
-    "SELECT * FROM guests;"
-  );
+  const code = await pool.query("SELECT * FROM guests;");
 
   return NextResponse.json(code.rows);
 };

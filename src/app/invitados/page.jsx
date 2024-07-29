@@ -36,6 +36,7 @@ export default function Page() {
             <TableHead>Email</TableHead>
             <TableHead>Guest</TableHead>
             <TableHead>Companion</TableHead>
+            <TableHead>Address</TableHead>
             {/* <TableHead className="text-right">Amount</TableHead> */}
           </TableRow>
         </TableHeader>
@@ -45,6 +46,7 @@ export default function Page() {
               <TableCell>{row.email}</TableCell>
               <TableCell>{row.guest}</TableCell>
               <TableCell>{row.companion}</TableCell>
+              <TableCell>{row.address}</TableCell>
             </TableRow>
           ))}
         </TableBody>
