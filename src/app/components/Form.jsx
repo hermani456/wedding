@@ -1,21 +1,25 @@
 "use client";
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { set } from "@fileforge/client/dist/esm/client/codegen/core/schemas";
 
 const Form = () => {
   const [email, setEmail] = useState("");
   const [guest, setGuest] = useState("");
   const [companion, setCompanion] = useState("");
   const [address, setAddress] = useState("");
+  const [language, setLanguage] = useState("english");
   const [isLoading, setIsLoading] = useState(false);
+
+  const handleLanguageChange = (e) => {
+    setLanguage(e.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     const res = await fetch("/api/pdf", {
       method: "POST",
-      body: JSON.stringify({ email, guest, companion, address }),
+      body: JSON.stringify({ email, guest, companion, address, language }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -25,6 +29,7 @@ const Form = () => {
       setEmail("");
       setGuest("");
       setCompanion("");
+      setAddress("");
       alert("RSVP sent successfully!");
     }
     if (!res.ok) {
@@ -112,6 +117,24 @@ const Form = () => {
           <span className="text-sm">
             If you need a paper invitation please indicate your home address
           </span>
+        </div>
+        <div className="mb-5">
+          <label
+            htmlFor="language"
+            className="block mb-2 text-sm font-medium text-unolight dark:text-white"
+          >
+            Select your preferred language
+          </label>
+          <select
+            id="language"
+            value={language}
+            onChange={handleLanguageChange}
+            className="bg-gray-50 border border-gray-300 text-unolight text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          >
+            <option value="english">English</option>
+            <option value="spanish">Español</option>
+            <option value="polski">Polski</option>
+          </select>
         </div>
         <Button
           type="submit"

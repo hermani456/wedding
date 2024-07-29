@@ -7,6 +7,9 @@ import fs from "fs";
 import { promises as fss } from "fs";
 import { Resend } from "resend";
 import { StackOverflowTipsEmail } from "../../../../emails/Template";
+import { Spanish } from "../../../../emails/Spanish";
+import { English } from "../../../../emails/English";
+import { Polski } from "../../../../emails/Polski";
 import pool from "../../../utils/db";
 // import { File } from "@fileforge/client/dist/esm/client/codegen/core/schemas";
 import { File } from "formdata-node";
@@ -20,7 +23,7 @@ const ff = new FileforgeClient({
 export const POST = async (req) => {
   const body = await req.json();
   console.log(body);
-  const { email, guest, companion, address } = body;
+  const { email, guest, companion, address, language } = body;
 
   await pool.query(
     "INSERT INTO guests (email, guest, companion, address) VALUES ($1, $2, $3, $4)",
@@ -93,14 +96,27 @@ export const POST = async (req) => {
 
   const pdfBuffer = Buffer.concat(chunks);
 
+  let reactComponent;
+  let subject
+  if (language === "spanish") {
+    reactComponent = Spanish({ guest, companion });
+    subject = "👩‍❤️‍💋‍👨Celebremos juntos! Invitación de Boda de Maria y Diego";
+  } else if (language === "english") {
+    reactComponent = English({ guest, companion });
+    subject = "👩‍❤️‍💋‍👨Celebrate with Us! Maria and Diego's Wedding Invitation"
+  } else if (language === "polski") {
+    reactComponent = Polski({ guest, companion });
+    subject = "👩‍❤️‍💋‍👨Świętuj z Nami! Zaproszenie na Ślub Marii i Diego"
+  }
+
   const { data, error } = await resend.emails.send({
     from: "Maria & Diego <send@yme.cl>",
     to: email,
-    subject: "👩‍❤️‍💋‍👨Celebrate with Us! Maria and Diego's Wedding Invitation",
-    react: StackOverflowTipsEmail({ guest, companion }),
+    subject: subject,
+    react: reactComponent,
     attachments: [
       {
-        filename: "invitation.pdf",
+        filename: "Invitation.pdf",
         content: pdfBuffer.toString("base64"),
         encoding: "base64",
         contentType: "application/pdf",

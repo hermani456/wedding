@@ -39,7 +39,7 @@ const PropDefaults = {
   ],
 };
 
-export const EnglishTemplate = ({ guest, companion }) => (
+export const English = ({ guest, companion }) => (
   <Html>
     <Head />
     <Preview>You're Invited to Celebrate Our Wedding!</Preview>
@@ -129,11 +129,11 @@ export const EnglishTemplate = ({ guest, companion }) => (
   </Html>
 );
 
-EnglishTemplate.PreviewProps = {
+English.PreviewProps = {
   tips: PropDefaults.tips,
 };
 
-export default EnglishTemplate;
+export default English;
 
 const main = {
   backgroundColor: "#f3f3f5",

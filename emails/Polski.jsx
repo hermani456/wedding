@@ -39,10 +39,10 @@ const PropDefaults = {
   ],
 };
 
-export const Polaco = ({ guest, companion }) => (
+export const Polski = ({ guest, companion }) => (
   <Html>
     <Head />
-    <Preview>You're Invited to Celebrate Our Wedding!</Preview>
+    <Preview>Zapraszamy do świętowania naszego ślubu!</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={header}>
@@ -134,11 +134,11 @@ export const Polaco = ({ guest, companion }) => (
   </Html>
 );
 
-Polaco.PreviewProps = {
+Polski.PreviewProps = {
   tips: PropDefaults.tips,
 };
 
-export default Polaco;
+export default Polski;
 
 const main = {
   backgroundColor: "#f3f3f5",

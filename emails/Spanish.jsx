@@ -42,7 +42,7 @@ const PropDefaults = {
 export const Spanish = ({ guest, companion }) => (
   <Html>
     <Head />
-    <Preview>You're Invited to Celebrate Our Wedding!</Preview>
+    <Preview>¡Estás invitado a celebrar nuestra boda!</Preview>
     <Body style={main}>
       <Container style={container}>
         <Section style={header}>
