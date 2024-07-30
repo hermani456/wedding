@@ -103,7 +103,14 @@ const Template = ({ guest, companion }) => {
                 className="text-center mt-10 text-2xl font-semibold"
                 style={{ fontFamily: "Great Vibes" }}
               >
-                {guest} {companion && `& ${companion}`}
+                {guest}
+                <br />
+                {companion && (
+                  <>
+                    &<br />
+                    {companion}
+                  </>
+                )}
               </h3>
             </div>
           </main>

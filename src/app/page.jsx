@@ -4,16 +4,6 @@ import Hero from "./components/Hero";
 import Form from "./components/Form";
 import Gallery from "./components/Gallery";
 
-// const page = async () => {
-//   return (
-//     <div className="flex">
-//       <Template />
-//     </div>
-//   );
-// };
-
-// export default page;
-
 const page = () => {
   return (
     <>
