@@ -15,8 +15,6 @@
 //   console.log("Invalid invitation code");
 // }
 
-// just need 16 characters
-
 // for (let i = 0; i < 50; i++) {
 //   const shortId = crypto.randomUUID().split("-").join("").substring(0, 16);
 //   console.log(`INSERT INTO invitationCodes (code) VALUES('${shortId}');`);

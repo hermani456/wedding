@@ -151,7 +151,7 @@ const Gallery = () => {
         </div>
         <div className="grid gap-4">
           <Image
-            src="https://i.ibb.co/znNhCLB/10.webp"
+            src="https://i.postimg.cc/HsTYm0pF/25.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
