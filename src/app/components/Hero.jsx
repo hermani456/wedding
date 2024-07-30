@@ -52,11 +52,11 @@ const Hero = () => {
           </div>
         </div>
         <div className="mx-auto lg:mt-0 lg:col-span-5 lg:flex">
-          <Image src={diegomaria} alt="Hero" width={500} />
+          <Image src={diegomaria} alt="Hero" width={500} className="pointer-events-none"/>
         </div>
       </div>
       <div className="sticky bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-28">
-        <Image src={wali} alt="Wali" fill className="object-cover" />
+        <Image src={wali} alt="Wali" fill className="object-cover pointer-events-none" />
       </div>
     </section>
   );
