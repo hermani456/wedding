@@ -56,7 +56,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="sticky bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-28">
-        <Image src={wali} alt="Wali" layout="fill" objectFit="cover" />
+        <Image src={wali} alt="Wali" fill className="object-cover" />
       </div>
     </section>
   );
