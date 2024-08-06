@@ -27,17 +27,20 @@ export default function Page() {
 
   return (
     <Container>
-      <h1 className="text-xl text-center my-5">Invitados Confirmados</h1>
+      <h1 className="text-xl text-center my-5 text-uno">
+        <span className="text-tres font-bold text-2xl">
+          {data.length !== 0 && data.length}
+        </span>{" "}
+        Invitados Confirmados
+      </h1>
       <Table>
         <TableCaption>Guests list.</TableCaption>
         <TableHeader>
           <TableRow>
-            {/* <TableHead className="w-[100px]">Invoice</TableHead> */}
             <TableHead>Email</TableHead>
             <TableHead>Guest</TableHead>
             <TableHead>Companion</TableHead>
             <TableHead>Address</TableHead>
-            {/* <TableHead className="text-right">Amount</TableHead> */}
           </TableRow>
         </TableHeader>
         <TableBody>
