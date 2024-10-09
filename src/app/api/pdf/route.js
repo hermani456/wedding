@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { NextRequest } from "next";
 import { FileforgeClient } from "@fileforge/client";
 import { compile } from "@fileforge/react-print";
 import Template from "../../components/Template";
@@ -8,7 +7,6 @@ import { Resend } from "resend";
 import { Spanish } from "../../../../emails/Spanish";
 import { English } from "../../../../emails/English";
 import { Polski } from "../../../../emails/Polski";
-import pool from "../../../utils/db";
 // import { File } from "@fileforge/client/dist/esm/client/codegen/core/schemas";
 import { File } from "formdata-node";
 
@@ -48,10 +46,10 @@ export const POST = async (req) => {
   // );
 
   const HTML = await compile(<Template guest={guest} companion={companion} />);
-  const imagePath1 = await fss.readFile(process.cwd() + "/public/1.webp");
-  const imagePath2 = await fss.readFile(process.cwd() + "/public/2.webp");
-  const imagePath3 = await fss.readFile(process.cwd() + "/public/3.webp");
-  const imagePath5 = await fss.readFile(process.cwd() + "/public/plantas.png");
+  const imagePath1 = await fss.readFile("public/1.webp");
+  const imagePath2 = await fss.readFile("public/2.webp");
+  const imagePath3 = await fss.readFile("public/3.webp");
+  const imagePath5 = await fss.readFile("public/plantas.png");
 
   const pdfStream = await ff.pdf.generate(
     [
