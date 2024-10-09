@@ -9,7 +9,7 @@ import { English } from "../../../../emails/English";
 import { Polski } from "../../../../emails/Polski";
 // import { File } from "@fileforge/client/dist/esm/client/codegen/core/schemas";
 import { File } from "formdata-node";
-
+import path from 'path';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const ff = new FileforgeClient({
@@ -46,10 +46,10 @@ export const POST = async (req) => {
   // );
 
   const HTML = await compile(<Template guest={guest} companion={companion} />);
-  const imagePath1 = await fss.readFile("public/1.webp");
-  const imagePath2 = await fss.readFile("public/2.webp");
-  const imagePath3 = await fss.readFile("public/3.webp");
-  const imagePath5 = await fss.readFile("public/plantas.png");
+  const imagePath1 = await fss.readFile(path.join(process.cwd(), 'public', '1.webp'));
+  const imagePath2 = await fss.readFile(path.join(process.cwd(), 'public', '2.webp'));
+  const imagePath3 = await fss.readFile(path.join(process.cwd(), 'public', '3.webp'));
+  const imagePath5 = await fss.readFile(path.join(process.cwd(), 'public', 'plantas.png'));
 
   const pdfStream = await ff.pdf.generate(
     [
