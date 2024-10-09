@@ -18,32 +18,7 @@ const ff = new FileforgeClient({
 
 export const POST = async (req) => {
   const body = await req.json();
-  // console.log(body);
   const { email, guest, companion, address, language } = body;
-
-  // await pool.query(
-  //   "INSERT INTO guests (email, guest, companion, address) VALUES ($1, $2, $3, $4)",
-  //   [email, guest, companion, address]
-  // );
-
-  // const code = await pool.query(
-  //   "SELECT * FROM invitationCodes WHERE code = $1",
-  //   [invitationcode]
-  // );
-
-  // if (code.rows.length === 0 || code.rows[0].used) {
-  //   return NextResponse.json(
-  //     { error: "Invalid invitation code" },
-  //     { status: 400 }
-  //   );
-  // }
-
-  // await pool.query("UPDATE invitationCodes SET used = true WHERE code = $1", [invitationcode]);
-
-  // await pool.query(
-  //   "UPDATE invitationCodes SET used = true, guest = $1, companion = $2 WHERE code = $3",
-  //   [guest, companion, invitationcode]
-  // );
 
   const HTML = await compile(<Template guest={guest} companion={companion} />);
   const imagePath1 = await fss.readFile(path.join(process.cwd(), 'public', '1.webp'));

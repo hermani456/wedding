@@ -86,21 +86,21 @@ const Gallery = () => {
             alt="Maria y Diego"
             width={500}
             height={200}
-            className="object-cover rounded pointer-events-none"
+            className="object-cover rounded h-full pointer-events-none"
           />
           <Image
             src="https://i.ibb.co/WyzKynh/2.webp"
             alt="Maria y Diego"
             width={500}
             height={900}
-            className="object-cover rounded pointer-events-none"
+            className="object-cover rounded h-full pointer-events-none"
           />
           <Image
             src="https://i.postimg.cc/76d09H75/21.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
-            className="object-cover rounded pointer-events-none"
+            className="object-cover rounded h-full pointer-events-none"
           />
         </div>
         <div className="grid gap-4">
@@ -109,21 +109,21 @@ const Gallery = () => {
             alt="Maria y Diego"
             width={500}
             height={500}
-            className="object-cover rounded pointer-events-none"
+            className="object-cover rounded h-full pointer-events-none"
           />
           <Image
             src="https://i.ibb.co/mJkcZ67/5.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
-            className="object-cover rounded pointer-events-none"
+            className="object-cover rounded h-full pointer-events-none"
           />
           <Image
             src="https://i.ibb.co/3ydDrZT/6.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
-            className="object-cover rounded pointer-events-none"
+            className="object-cover rounded h-full pointer-events-none"
           />
         </div>
         <div className="grid gap-4">
@@ -132,21 +132,21 @@ const Gallery = () => {
             alt="Maria y Diego"
             width={500}
             height={500}
-            className="object-cover rounded pointer-events-none"
+            className="object-cover rounded h-full pointer-events-none"
           />
           <Image
             src="https://i.ibb.co/TBsx6yK/8.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
-            className="object-cover rounded pointer-events-none"
+            className="object-cover rounded h-full pointer-events-none"
           />
           <Image
             src="https://i.ibb.co/WBNpSyw/9.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
-            className="object-cover rounded pointer-events-none"
+            className="object-cover rounded h-full pointer-events-none"
           />
         </div>
         <div className="grid gap-4">
@@ -155,21 +155,21 @@ const Gallery = () => {
             alt="Maria y Diego"
             width={500}
             height={500}
-            className="object-cover rounded pointer-events-none"
+            className="object-cover rounded h-full pointer-events-none"
           />
           <Image
             src="https://i.ibb.co/hW3xJK5/11.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
-            className="object-cover rounded pointer-events-none"
+            className="object-cover rounded h-full pointer-events-none"
           />
           <Image
             src="https://i.postimg.cc/gJn33Xw9/22.webp"
             alt="Maria y Diego"
             width={500}
             height={500}
-            className="object-cover rounded pointer-events-none"
+            className="object-cover rounded h-full pointer-events-none"
           />
         </div>
       </div>
