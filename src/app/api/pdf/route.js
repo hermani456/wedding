@@ -3,10 +3,8 @@ import { NextRequest } from "next";
 import { FileforgeClient } from "@fileforge/client";
 import { compile } from "@fileforge/react-print";
 import Template from "../../components/Template";
-import fs from "fs";
 import { promises as fss } from "fs";
 import { Resend } from "resend";
-import { StackOverflowTipsEmail } from "../../../../emails/Template";
 import { Spanish } from "../../../../emails/Spanish";
 import { English } from "../../../../emails/English";
 import { Polski } from "../../../../emails/Polski";
@@ -22,13 +20,13 @@ const ff = new FileforgeClient({
 
 export const POST = async (req) => {
   const body = await req.json();
-  console.log(body);
+  // console.log(body);
   const { email, guest, companion, address, language } = body;
 
-  await pool.query(
-    "INSERT INTO guests (email, guest, companion, address) VALUES ($1, $2, $3, $4)",
-    [email, guest, companion, address]
-  );
+  // await pool.query(
+  //   "INSERT INTO guests (email, guest, companion, address) VALUES ($1, $2, $3, $4)",
+  //   [email, guest, companion, address]
+  // );
 
   // const code = await pool.query(
   //   "SELECT * FROM invitationCodes WHERE code = $1",
@@ -133,8 +131,8 @@ export const POST = async (req) => {
   }
 };
 
-export const GET = async () => {
-  const code = await pool.query("SELECT * FROM guests;");
+// export const GET = async () => {
+//   const code = await pool.query("SELECT * FROM guests;");
 
-  return NextResponse.json(code.rows);
-};
+//   return NextResponse.json(code.rows);
+// };
